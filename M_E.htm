@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Navratri - Maa Enterprise</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Floating sparkles */
+    .sparkle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: gold;
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+      opacity: 0.8;
+    }
+    @keyframes float {
+      from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      to { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    header {
+      background: linear-gradient(45deg, #d6336c, #ff8800);
+      padding: 20px;
+      animation: slideDown 1.5s ease;
+      border-bottom: 5px solid #ffd700;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0;
+      font-weight: 800;
+      text-shadow: 3px 3px 12px rgba(0,0,0,0.4);
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8800; }
+      to { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff4500; }
+    }
+
+    .greeting {
+      margin: 30px auto;
+      max-width: 90%;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease;
+      transition: transform 0.5s;
+    }
+    .greeting:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 35px rgba(255,215,0,0.6);
+    }
+
+    .greeting h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 15px;
+      color: #ffd700;
+      text-transform: uppercase;
+    }
+
+    .greeting p {
+      font-size: clamp(1rem, 3vw, 1.2rem);
+      line-height: 1.6;
+    }
+
+    .image-container {
+      margin: 30px auto;
+      animation: zoomIn 3s ease;
+      display: flex;
+      justify-content: center;
+    }
+
+    .image-container img {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      border: 5px solid #ffd700;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: transform 0.6s, box-shadow 0.6s;
+    }
+    .image-container img:hover {
+      transform: scale(1.05) rotate(-2deg);
+      box-shadow: 0 15px 40px rgba(255,215,0,0.8);
+    }
+
+    /* Floating Diyas */
+    .diya {
+      position: absolute;
+      width: 50px;
+      animation: floatDiya 8s infinite;
+    }
+    .diya img { width: 100%; }
+    @keyframes floatDiya {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+
+    .btn-wish {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: linear-gradient(45deg, #ff4500, #ff1493);
+      color: white;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.4s;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+    .btn-wish:hover {
+      background: linear-gradient(45deg, #ffd700, #ff6347);
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(255,215,0,0.8);
+    }
+
+    footer {
+      background: #6f1d1b;
+      padding: 15px;
+      margin-top: 40px;
+      border-top: 5px solid #ffd700;
+    }
+
+    footer p {
+      margin: 8px 0;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      color: #ffd700;
+    }
+
+    .contact {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+    .contact a {
+      color: #ffd700;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      transition: color 0.3s, transform 0.3s;
+    }
+    .contact a:hover {
+      color: #ff6347;
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes slideDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      .diya { width: 35px; }
+      .image-container img { border: 3px solid #ffd700; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sparkles floating -->
+  <div class="sparkle" style="left:10%; animation-delay: 0s;"></div>
+  <div class="sparkle" style="left:30%; animation-delay: 2s;"></div>
+  <div class="sparkle" style="left:50%; animation-delay: 4s;"></div>
+  <div class="sparkle" style="left:70%; animation-delay: 1s;"></div>
+  <div class="sparkle" style="left:90%; animation-delay: 3s;"></div>
+
+  <!-- Diyas floating -->
+  <div class="diya" style="left:5%; animation-delay:1s;">
+    <img src="https://i.ibb.co/L9HZQ4h/diya.png" alt="Diya">
+  </div>
+  <div class="diya" style="left:85%; animation-delay:3s;">
+    <img src="https://i.ibb.co/L9HZQ4h/diya.png" alt="Diya">
+  </div>
+
+  <header>
+    <h1>🌸✨ Happy Navratri ✨🌸</h1>
+  </header>
+
+  <section class="greeting">
+    <h2>Warm Wishes from Maa Enterprise</h2>
+    <p>🌼 May Goddess Durga bless you and your family with happiness, health, and prosperity.<br>
+    🎉 Let’s celebrate this Navratri with devotion, dance, and divine energy.<br>
+    💐 Wishing you a vibrant and blessed Navratri!</p>
+    <button class="btn-wish">💃 Celebrate Navratri 🎶</button>
+  </section>
+
+  <div class="image-container">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.-0tsuYSf8VcLkXYQl4cGXQHaED?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Navratri Celebration">
+  </div>
+
+  <footer>
+    <p>📍 Maa Enterprise, Patel Chowk, Plot No-390, Phase-2, Jamnagar</p>
+    <div class="contact">
+      <span>📞</span>
+      <a href="tel:9913224798">9913224798</a>
+    </div>
+  </footer>
+
+</body>
+</html>

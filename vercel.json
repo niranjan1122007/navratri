@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "routes": [
+    { "src": "/old-path", "dest": "/new-path", "status": 301 },
+    { "src": "/api/(.*)", "dest": "/api/M_E.htm" }
+  ]
+}
